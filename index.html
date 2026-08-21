@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Boo ♡</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@400;500;600&display=swap');
+
+:root{
+    --bg:#0d0b0c;
+    --cream:#f7eee7;
+    --soft:#d9c5bc;
+    --pink:#e9aaa9;
+    --muted:#9d8d88;
+    --card:#171315;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:"DM Sans",sans-serif;
+    overflow:hidden;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+.page{
+    width:100%;
+    height:100vh;
+    min-height:100vh;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:55px 7%;
+    overflow-y:auto;
+    animation:pageIn .8s ease;
+}
+
+.page.active{
+    display:flex;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateY(18px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+}
+
+.serif{
+    font-family:"Playfair Display",serif;
+}
+
+.small{
+    color:var(--muted);
+    font-size:11px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+}
+
+h1,
+h2,
+h3{
+    font-family:"Playfair Display",serif;
+    font-weight:400;
+}
+
+p{
+    line-height:1.9;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:15px 27px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:100px;
+    background:rgba(255,255,255,.05);
+    color:var(--cream);
+    cursor:pointer;
+    transition:.3s ease;
+}
+
+.btn:hover{
+    background:rgba(255,255,255,.12);
+    transform:translateY(-2px);
+}
+
+.music-control{
+    position:fixed;
+    z-index:9999;
+    right:20px;
+    top:20px;
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.15);
+
+    background:rgba(20,15,17,.8);
+    color:white;
+
+    cursor:pointer;
+}
+
+/* =========================
+   OPENING
+========================= */
+
+#opening{
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at 50% 40%,
+        rgba(204,133,135,.13),
+        transparent 36%
+    ),
+    var(--bg);
+}
+
+.opening-content{
+    max-width:650px;
+}
+
+.opening-content h1{
+    font-size:clamp(46px,9vw,82px);
+    margin:20px 0;
+}
+
+.opening-content p{
+    color:var(--soft);
+    max-width:520px;
+    margin:auto;
+}
+
+/* =========================
+   MEMORY
+========================= */
+
+.memory{
+    text-align:center;
+}
+
+.memory h2{
+    font-size:clamp(42px,7vw,70px);
+    margin:15px 0 20px;
+}
+
+.memory p{
+    color:var(--soft);
+    max-width:620px;
+    margin:auto;
+}
+
+.photo-box{
+    width:min(650px,100%);
+    aspect-ratio:4/3;
+    margin:35px auto 25px;
+    overflow:hidden;
+    border-radius:18px;
+    background:#181315;
+}
+
+.photo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* =========================
+   LOVE CARDS
+========================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin-top:35px;
+}
+
+.card{
+    padding:27px;
+    background:var(--card);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:18px;
+}
+
+.card span{
+    color:var(--pink);
+    font-size:11px;
+}
+
+.card h3{
+    font-size:25px;
+    margin:12px 0;
+}
+
+.card p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline{
+    margin-top:35px;
+}
+
+.timeline-item{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+    margin-bottom:50px;
+}
+
+.timeline-image{
+    aspect-ratio:4/3;
+    overflow:hidden;
+    border-radius:18px;
+    background:#181315;
+}
+
+.timeline-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.timeline-text h3{
+    font-size:35px;
+    margin:10px 0;
+}
+
+.timeline-text p{
+    color:var(--soft);
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-section{
+    text-align:center;
+}
+
+.video-section h2{
+    font-size:clamp(40px,7vw,65px);
+    margin:15px 0;
+}
+
+.video-section > .container > p{
+    color:var(--soft);
+}
+
+.video-box{
+    width:min(700px,100%);
+    margin:30px auto 0;
+    overflow:hidden;
+    border-radius:20px;
+    background:#171315;
+}
+
+.video-box video{
+    display:block;
+    width:100%;
+}
+
+/* =========================
+   WHY
+========================= */
+
+.reason{
+    padding:25px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.reason h3{
+    font-size:28px;
+    margin-bottom:7px;
+}
+
+.reason p{
+    color:var(--soft);
+}
+
+/* =========================
+   SECRET
+========================= */
+
+.secret{
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(233,170,169,.08),
+        transparent 40%
+    );
+}
+
+.secret h2{
+    font-size:clamp(42px,7vw,70px);
+    margin:15px 0;
+}
+
+.secret-description{
+    color:var(--soft);
+}
+
+.code-input{
+    width:180px;
+    padding:15px;
+
+    margin-top:30px;
+
+    background:transparent;
+    color:white;
+
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:8px;
+
+    text-align:center;
+
+    letter-spacing:8px;
+    font-size:19px;
+}
+
+.unlock-message{
+    display:none;
+    margin-top:25px;
+}
+
+.unlock-message h3{
+    font-size:35px;
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-page{
+    align-items:flex-start;
+    padding-top:80px;
+}
+
+.letter{
+    max-width:720px;
+    width:100%;
+    margin:auto;
+}
+
+.letter h2{
+    font-size:clamp(42px,7vw,68px);
+    margin:15px 0 40px;
+}
+
+.letter p{
+    color:var(--soft);
+    font-size:16px;
+    margin-bottom:22px;
+}
+
+.letter .emphasis{
+    color:var(--cream);
+    font-family:"Playfair Display",serif;
+    font-size:26px;
+    line-height:1.55;
+    margin:35px 0;
+}
+
+.letter .signature{
+    color:var(--cream);
+    font-family:"Playfair Display",serif;
+    font-size:28px;
+    margin-top:40px;
+}
+
+.letter-photo{
+    width:100%;
+    max-width:600px;
+    aspect-ratio:4/3;
+    margin:25px auto;
+    overflow:hidden;
+    border-radius:18px;
+}
+
+.letter-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* =========================
+   LETTER NAVIGATION
+========================= */
+
+.letter-slide{
+    display:none;
+}
+
+.letter-slide.active{
+    display:block;
+    animation:letterIn .7s ease;
+}
+
+@keyframes letterIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.letter-counter{
+    color:var(--muted);
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+/* =========================
+   FINAL
+========================= */
+
+#final{
+    text-align:center;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(233,170,169,.08),
+        transparent 40%
+    );
+}
+
+.final-date{
+    font-size:clamp(60px,12vw,110px);
+    opacity:0;
+    animation:finalReveal 2s ease forwards;
+}
+
+.final-still{
+    margin-top:10px;
+    color:var(--muted);
+    font-family:"Playfair Display",serif;
+    font-style:italic;
+
+    opacity:0;
+
+    animation:finalReveal 2s ease 1.2s forwards;
+}
+
+.final-birthday{
+    margin-top:55px;
+    letter-spacing:2px;
+
+    opacity:0;
+
+    animation:finalReveal 2s ease 2.4s forwards;
+}
+
+@keyframes finalReveal{
+    to{
+        opacity:1;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    .page{
+        padding:70px 6% 45px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .timeline-item{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .timeline-text h3{
+        font-size:30px;
+    }
+
+    .letter p{
+        font-size:15px;
+    }
+
+    .letter .emphasis{
+        font-size:23px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- MUSIC -->
+
+<audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+<button
+    id="musicBtn"
+    class="music-control"
+    onclick="toggleMusic()"
+>
+    ♪
+</button>
+
+
+<!-- ==================================================
+     01 OPENING
+================================================== -->
+
+<section
+    id="opening"
+    class="page active"
+>
+
+<div class="opening-content">
+
+    <div class="small">
+        a little something for you
+    </div>
+
+    <h1>
+        hey, birthday boy.
+    </h1>
+
+    <p>
+        I could've just bought you something.
+        <br><br>
+        But I wanted to give you something
+        <br>
+        you can keep coming back to.
+    </p>
+
+    <button
+        class="btn"
+        onclick="startExperience()"
+    >
+        open your gift ♡
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     02 MEMORY
+================================================== -->
+
+<section
+    id="memory"
+    class="page"
+>
+
+<div class="container memory">
+
+    <div class="small">
+        01 — do you remember?
+    </div>
+
+    <h2>
+        this one?
+    </h2>
+
+    <div class="photo-box">
+        <img
+            src="photo1.jpg"
+            alt="Our memory"
+        >
+    </div>
+
+    <p>
+        I remember this day because it was one of those
+        moments that didn't seem important at first...
+        but somehow became something I still carry with me.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextPage()"
+    >
+        continue →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     03 THINGS I LOVE
+================================================== -->
+
+<section
+    id="love"
+    class="page"
+>
+
+<div class="container">
+
+    <div class="small">
+        02 — things i love about you
+    </div>
+
+    <h2
+        class="serif"
+        style="
+        font-size:clamp(42px,7vw,68px);
+        margin:15px 0;
+        "
+    >
+        little things.
+    </h2>
+
+
+    <div class="cards">
+
+        <div class="card">
+            <span>01</span>
+
+            <h3>
+                Your voice.
+            </h3>
+
+            <p>
+                Funny how your voice was one of the
+                first things I noticed about you.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <span>02</span>
+
+            <h3>
+                The way you look at me.
+            </h3>
+
+            <p>
+                You probably don't realize how much
+                I notice it. But I do.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <span>03</span>
+
+            <h3>
+                Your random side.
+            </h3>
+
+            <p>
+                Biglang kakanta. Weird thoughts.
+                Random everything. Somehow, I love it.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <span>04</span>
+
+            <h3>
+                Your passion for music.
+            </h3>
+
+            <p>
+                I love seeing you care about something
+                deeply. I hope you never lose that.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <span>05</span>
+
+            <h3>
+                Even your annoying side.
+            </h3>
+
+            <p>
+                Yes, including the emotionally clueless
+                version of you kapag nag-aaway tayo. 😭
+            </p>
+        </div>
+
+
+        <div class="card">
+            <span>06</span>
+
+            <h3>
+                The little things.
+            </h3>
+
+            <p>
+                The hand holding. The cheek kisses.
+                The “kiss booo.” All of it.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div style="text-align:center">
+
+        <button
+            class="btn"
+            onclick="nextPage()"
+        >
+            continue →
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     04 OUR STORY
+================================================== -->
+
+<section
+    id="story"
+    class="page"
+>
+
+<div class="container">
+
+    <div class="small">
+        03 — us, so far
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-image">
+                <img
+                    src="photo2.jpg"
+                    alt="Our story"
+                >
+            </div>
+
+            <div class="timeline-text">
+
+                <div class="small">
+                    the beginning
+                </div>
+
+                <h3>
+                    10 years ago.
+                </h3>
+
+                <p>
+                    We were just two kids in the same church.
+                    We didn't even know what we were going
+                    to become to each other.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-image">
+                <img
+                    src="photo3.jpg"
+                    alt="Our memory"
+                >
+            </div>
+
+            <div class="timeline-text">
+
+                <div class="small">
+                    the random beginning
+                </div>
+
+                <h3>
+                    8-ball.
+                </h3>
+
+                <p>
+                    Out of all the possible ways our story
+                    could've started...
+                    billiards app talaga. 😭
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-image">
+                <img
+                    src="photo4.jpg"
+                    alt="Footbridge memory"
+                >
+            </div>
+
+            <div class="timeline-text">
+
+                <div class="small">
+                    one of my favorites
+                </div>
+
+                <h3>
+                    The footbridge.
+                </h3>
+
+                <p>
+                    The night I left you there, felt guilty,
+                    came back, saw your sad face, and somehow
+                    we ended up eating at Chowking.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-image">
+                <img
+                    src="photo5.jpg"
+                    alt="Venice memory"
+                >
+            </div>
+
+            <div class="timeline-text">
+
+                <div class="small">
+                    venice
+                </div>
+
+                <h3>
+                    The little things.
+                </h3>
+
+                <p>
+                    You came with me when I needed to get
+                    my voter's ID. And somewhere along the way,
+                    you were holding my hand like it was the
+                    most natural thing in the world.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+            <div class="timeline-image">
+                <img
+                    src="photo6.jpg"
+                    alt="Us"
+                >
+            </div>
+
+            <div class="timeline-text">
+
+                <div class="small">
+                    march 27
+                </div>
+
+                <h3>
+                    Two years.
+                </h3>
+
+                <p>
+                    And somehow, all those tiny moments
+                    became something I now call ours.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div style="text-align:center">
+
+        <button
+            class="btn"
+            onclick="nextPage()"
+        >
+            continue →
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     05 VIDEO
+================================================== -->
+
+<section
+    id="videoPage"
+    class="page video-section"
+>
+
+<div class="container">
+
+    <div class="small">
+        04 — okay, listen to me
+    </div>
+
+    <h2>
+        this one's for you.
+    </h2>
+
+    <p>
+        I wrote enough.
+        <br>
+        Now just listen to me for a minute.
+    </p>
+
+
+    <div class="video-box">
+
+        <video
+            id="loveVideo"
+            controls
+            playsinline
+        >
+            <source
+                src="video.mp4"
+                type="video/mp4"
+            >
+        </video>
+
+    </div>
+
+
+    <button
+        class="btn"
+        onclick="nextPage()"
+    >
+        continue →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     06 WHY I CHOOSE YOU
+================================================== -->
+
+<section
+    id="why"
+    class="page"
+>
+
+<div class="container">
+
+    <div
+        style="
+        text-align:center;
+        margin-bottom:30px;
+        "
+    >
+
+        <div class="small">
+            05 — why i choose you
+        </div>
+
+        <h2
+            class="serif"
+            style="
+            font-size:clamp(42px,7vw,70px);
+            margin-top:15px;
+            "
+        >
+            because it's you.
+        </h2>
+
+    </div>
+
+
+    <div class="reason">
+
+        <h3>
+            When I'm sad → you.
+        </h3>
+
+        <p>
+            You're one of the people I want around
+            when something isn't okay.
+        </p>
+
+    </div>
+
+
+    <div class="reason">
+
+        <h3>
+            When something funny happens → you.
+        </h3>
+
+        <p>
+            You're one of the first people I want to tell.
+        </p>
+
+    </div>
+
+
+    <div class="reason">
+
+        <h3>
+            When I have good news → you.
+        </h3>
+
+        <p>
+            Somehow, sharing things with you makes
+            them feel even better.
+        </p>
+
+    </div>
+
+
+    <div class="reason">
+
+        <h3>
+            When I imagine the future → ...you.
+        </h3>
+
+        <p>
+            I don't need to know exactly what the future
+            looks like. I just know I hope you're somewhere in it.
+        </p>
+
+    </div>
+
+
+    <div style="text-align:center">
+
+        <button
+            class="btn"
+            onclick="nextPage()"
+        >
+            continue →
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     07 SECRET
+================================================== -->
+
+<section
+    id="secret"
+    class="page secret"
+>
+
+<div class="container">
+
+    <div class="small">
+        06 — there's one more thing
+    </div>
+
+    <h2>
+        you found something.
+    </h2>
+
+    <p class="secret-description">
+
+        I left a little secret here.
+
+        <br>
+
+        If you know the code...
+
+        <br>
+
+        maybe you'll get to see it.
+
+    </p>
+
+
+    <input
+        id="codeInput"
+        class="code-input"
+        maxlength="4"
+        inputmode="numeric"
+        placeholder="____"
+    >
+
+
+    <br>
+
+
+    <button
+        class="btn"
+        onclick="unlockSecret()"
+    >
+        unlock ♡
+    </button>
+
+
+    <div
+        id="unlockMessage"
+        class="unlock-message"
+    >
+
+        <h3>
+            you found it. ♡
+        </h3>
+
+        <p
+            style="
+            color:var(--soft);
+            margin-top:10px;
+            "
+        >
+            I knew you would.
+        </p>
+
+
+        <button
+            class="btn"
+            onclick="openLetter()"
+        >
+            read my letter ♡
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 1
+================================================== -->
+
+<section
+    id="letter1"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 01
+    </div>
+
+    <h2>
+        Happy birthday, love.
+    </h2>
+
+    <p>
+        Boo,
+    </p>
+
+    <p>
+        If you've reached this page, ibig sabihin
+        natapos mo na yung little world na ginawa ko
+        para sa'yo.
+    </p>
+
+    <p>
+        And honestly, hindi ko alam kung paano ko
+        ilalagay lahat ng gusto kong sabihin sa isang
+        page lang.
+    </p>
+
+    <p>
+        Kasi two years with you feels like ang
+        dami-daming kwento na kahit pilitin kong
+        isa-isahin, may makakalimutan pa rin ako.
+    </p>
+
+    <p class="emphasis">
+        Pero may isang bagay akong sure.
+        <br>
+        I'm really, really grateful that it's you.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 2
+================================================== -->
+
+<section
+    id="letter2"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 02
+    </div>
+
+    <p>
+        Ang funny isipin na nakilala na pala kita
+        almost 10 years ago.
+    </p>
+
+    <p>
+        Nasa simbahan ka lang noon, and I didn't even know
+        na one day, magiging ganito ka ka-important sa buhay ko.
+    </p>
+
+    <p>
+        Crush lang kita noon dahil sa boses mo. 😭
+    </p>
+
+    <p>
+        Tapos nagpareto pa ako sa'yo, nag-usap tayo
+        ng two weeks, tapos nawala rin.
+    </p>
+
+    <p>
+        Parang ang layo isipin na yung taong minsan ko lang
+        nakita ulit after so many years would eventually
+        become <strong>my person.</strong>
+    </p>
+
+    <p class="emphasis">
+        And then there was that prayer.
+    </p>
+
+    <p>
+        I remember asking God na sana bigyan Niya ako
+        ng lalaking mamahalin talaga ako.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 3
+================================================== -->
+
+<section
+    id="letter3"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 03
+    </div>
+
+    <p class="emphasis">
+        And for some reason...
+        <br>
+        ikaw yung pumasok sa isip ko.
+    </p>
+
+    <p>
+        Kahit matagal na kitang hindi nakita.
+    </p>
+
+    <p>
+        I don't know if that's coincidence, timing,
+        or God's little way of writing things before
+        we even knew what was happening.
+    </p>
+
+    <p>
+        Pero I'm glad I played that 8-ball game with you.
+    </p>
+
+    <p>
+        Kasi doon nagsimula yung tayo.
+    </p>
+
+    <p class="emphasis">
+        And look at us now.
+        <br>
+        Two years later.
+        <br>
+        March 27.
+    </p>
+
+    <p>
+        Our little date.
+        <br>
+        Our little story.
+        <br>
+        Our little world.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 4
+================================================== -->
+
+<section
+    id="letter4"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 04
+    </div>
+
+    <p>
+        And if someone asked me what my favorite memory
+        with you is, baka hindi ko rin masagot nang maayos.
+    </p>
+
+    <p>
+        Kasi ang dami.
+    </p>
+
+    <p>
+        Pero somehow, lagi kong naiisip yung footbridge.
+    </p>
+
+    <p>
+        Yung gabing galit ako kasi gabi na,
+        gutom na ako, tapos iniwan pa kita doon. 😭
+    </p>
+
+    <p>
+        Tapos bumalik ako dahil nakunsensya ako,
+        and there you were, pauwi na with that sad little face.
+    </p>
+
+    <p>
+        HAHAHAHAHA.
+    </p>
+
+    <p>
+        I'm sorry.
+        <br>
+        But also...
+        <br>
+        your face was so cute.
+    </p>
+
+    <p>
+        Then we ended up eating at Chowking.
+    </p>
+
+    <p>
+        And of course, dahil ikaw yan,
+        <strong>natapon mo yung milk tea mo.</strong>
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 5
+================================================== -->
+
+<section
+    id="letter5"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 05
+    </div>
+
+    <p>
+        I don't know why that memory stayed with me.
+    </p>
+
+    <p>
+        It wasn't a fancy date.
+        <br>
+        It wasn't some grand romantic moment.
+    </p>
+
+    <p>
+        It was just us, late at night, eating at Chowking
+        after a stupid little misunderstanding.
+    </p>
+
+    <p class="emphasis">
+        But those are the memories I treasure.
+        <br><br>
+        The ones that weren't supposed to be special.
+        <br>
+        Somehow became special because you were there.
+    </p>
+
+    <p>
+        And apparently, ikaw din yung naaalala yung
+        mukha kong nakangiti sa footbridge.
+    </p>
+
+    <p>
+        So maybe that moment meant something
+        to both of us after all.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 6
+================================================== -->
+
+<section
+    id="letter6"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 06
+    </div>
+
+    <p>
+        And then there was Venice.
+    </p>
+
+    <p>
+        You probably don't know how much I appreciated
+        that day.
+    </p>
+
+    <p>
+        You came with me because I needed to get my
+        voter's ID done before enrollment.
+    </p>
+
+    <p>
+        It wasn't some romantic date.
+    </p>
+
+    <p>
+        We weren't doing anything extraordinary.
+    </p>
+
+    <p>
+        You were just there.
+    </p>
+
+    <p>
+        Walking beside me.
+    </p>
+
+    <p>
+        And then you started holding my hand.
+    </p>
+
+    <p>
+        Pasimple pa. 😭
+    </p>
+
+    <p>
+        And when we were just sitting there,
+        you kept wanting to kiss my cheeks.
+    </p>
+
+    <p class="emphasis">
+        Those little things.
+        <br>
+        Those are the things I remember.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 7
+================================================== -->
+
+<section
+    id="letter7"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 07
+    </div>
+
+    <p class="emphasis">
+        Our little things.
+        <br>
+        The things nobody else would understand.
+    </p>
+
+    <p>
+        That's our relationship.
+    </p>
+
+    <p>
+        And I wouldn't trade it for something that only
+        looks perfect from the outside.
+    </p>
+
+    <p>
+        Because I know we're not perfect.
+    </p>
+
+    <p>
+        We fight.
+        <br>
+        Sometimes badly.
+        <br>
+        Sometimes I don't understand you.
+        <br>
+        Sometimes you have the emotional intelligence
+        of a potato during an argument. 😭
+    </p>
+
+    <p>
+        And sometimes I know I can be difficult too.
+    </p>
+
+    <p>
+        But even through those moments, I've learned something:
+    </p>
+
+    <p class="emphasis">
+        loving someone isn't only about loving them
+        when everything feels easy.
+    </p>
+
+    <p>
+        It's also learning them.
+        <br>
+        Understanding them.
+        <br>
+        Trying again.
+        <br>
+        Choosing to communicate.
+        <br>
+        Choosing to stay soft even when you're upset.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 8
+================================================== -->
+
+<section
+    id="letter8"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 08
+    </div>
+
+    <p>
+        And I'm still learning how to love you better.
+    </p>
+
+    <p>
+        I hope you know that.
+    </p>
+
+    <p>
+        I also want you to know something about yourself
+        that I hope you never forget.
+    </p>
+
+    <p class="emphasis">
+        You don't have to rush.
+    </p>
+
+    <p>
+        You don't have to look at the people around you
+        and wonder why they're already ahead.
+    </p>
+
+    <p>
+        You don't have to compare your progress
+        with anyone else's.
+    </p>
+
+    <p>
+        You don't have to become successful at the same
+        time everyone else does.
+    </p>
+
+    <p>
+        You have your own timeline.
+    </p>
+
+    <p class="emphasis">
+        Your own time to shine.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 9
+================================================== -->
+
+<section
+    id="letter9"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 09
+    </div>
+
+    <p>
+        And I genuinely believe that you will.
+    </p>
+
+    <p>
+        I see how much you love music.
+        <br>
+        I see the things you're passionate about.
+        <br>
+        I see the person you're becoming.
+    </p>
+
+    <p>
+        And I hope you keep going.
+    </p>
+
+    <p>
+        Not because you need to prove anything to anyone.
+        <br>
+        But because you deserve to see what you're capable
+        of becoming.
+    </p>
+
+    <p>
+        And if you ever forget that...
+    </p>
+
+    <p class="emphasis">
+        I'll remind you.
+    </p>
+
+    <p>
+        I want to see you win.
+    </p>
+
+    <p>
+        I want to see you accomplish the things
+        you've been dreaming about.
+    </p>
+
+    <p>
+        I want to see you become successful.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 10
+================================================== -->
+
+<section
+    id="letter10"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 10
+    </div>
+
+    <p>
+        I want to travel with you.
+    </p>
+
+    <p>
+        I want more food trips.
+        <br>
+        More unli wings.
+        <br>
+        More of your favorite food that somehow makes
+        my giniling and spaghetti feel like Michelin-star meals. 😭
+    </p>
+
+    <p>
+        More random dates.
+        <br>
+        More pictures.
+        <br>
+        More songs.
+        <br>
+        More stupid jokes.
+        <br>
+        More birthdays.
+        <br>
+        More March 27s.
+        <br>
+        More years of us.
+    </p>
+
+    <p class="emphasis">
+        And hopefully...
+        <br>
+        less away.
+        <br>
+        Please lang. 😭
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 11
+================================================== -->
+
+<section
+    id="letter11"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 11
+    </div>
+
+    <p>
+        Thank you, Boo.
+    </p>
+
+    <p>
+        Thank you for being with me every day.
+        <br>
+        Thank you for always showing up.
+        <br>
+        <strong>Kahit late ka pumunta. 🙂</strong>
+    </p>
+
+    <p>
+        Thank you for making time.
+        <br>
+        Thank you for every time you held my hand.
+        <br>
+        Every random kiss.
+        <br>
+        Every laugh.
+        <br>
+        Every song.
+        <br>
+        Every conversation.
+        <br>
+        Every ordinary day that became a memory
+        because you were there.
+    </p>
+
+    <p>
+        Thank you for being someone I can call
+        when I have something to say.
+    </p>
+
+    <p>
+        Someone I can laugh with.
+        <br>
+        Someone I can be stupid with.
+        <br>
+        Someone I can share random things with.
+    </p>
+
+    <p class="emphasis">
+        Someone who became such a big part
+        of my everyday life without me even realizing it.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 12
+================================================== -->
+
+<section
+    id="letter12"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 12
+    </div>
+
+    <p class="emphasis">
+        I love you for who you are.
+        <br>
+        For who you were.
+        <br>
+        And for the person you're still becoming.
+    </p>
+
+    <p>
+        So on your birthday, I don't just want to say,
+        “Happy birthday.”
+    </p>
+
+    <p>
+        I want to say:
+    </p>
+
+    <p class="emphasis">
+        I'm proud of you.
+    </p>
+
+    <p>
+        I'm proud of the person you are.
+        <br>
+        I'm proud of the person you're becoming.
+        <br>
+        And I'm excited for everything that's still
+        waiting for you.
+    </p>
+
+    <p>
+        I hope this year is kind to you.
+        <br>
+        I hope God continues to guide you.
+        <br>
+        I hope you get closer to your dreams.
+        <br>
+        I hope you keep making music.
+        <br>
+        I hope you keep becoming the person
+        you're meant to be.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        keep reading →
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 13
+================================================== -->
+
+<section
+    id="letter13"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 13
+    </div>
+
+    <p class="emphasis">
+        And I hope, if God allows it,
+        <br>
+        I get to watch you become that person
+        beside you.
+    </p>
+
+    <p>
+        And if someday you look back at this website,
+        maybe years from now,
+        I hope you laugh at some of the things
+        I wrote here.
+    </p>
+
+    <p>
+        I hope you remember the little details.
+    </p>
+
+    <p>
+        The footbridge.
+        <br>
+        Chowking.
+        <br>
+        Venice.
+        <br>
+        8-ball.
+        <br>
+        The songs.
+        <br>
+        The random kisses.
+        <br>
+        The stupid jokes.
+        <br>
+        The fights we survived.
+        <br>
+        And all the memories we haven't even made yet.
+    </p>
+
+    <p class="emphasis">
+        Because that's what I want.
+        <br>
+        More memories.
+    </p>
+
+    <button
+        class="btn"
+        onclick="nextLetter()"
+    >
+        almost there → 
+    </button>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     LETTER PAGE 14 — END
+================================================== -->
+
+<section
+    id="letter14"
+    class="page letter-page"
+>
+
+<div class="letter">
+
+    <div class="letter-counter">
+        07 — for you, boo · 14
+    </div>
+
+    <p>
+        Not a perfect relationship.
+        <br>
+        Not a perfect life.
+        <br>
+        Just more days where I get to say,
+    </p>
+
+    <p class="emphasis">
+        “That's my Boo.”
+    </p>
+
+    <p>
+        So happy birthday, my love.
+    </p>
+
+    <p>
+        Thank you for being my favorite unexpected story.
+        <br>
+        Thank you for being my home in all the little ways.
+        <br>
+        And thank you for making <strong>March 27</strong>
+        mean so much more than just a date.
+    </p>
+
+    <p class="emphasis">
+        It's the day our story officially became ours.
+    </p>
+
+    <p>
+        I love you.
+        <br>
+        More than this website can ever fit.
+    </p>
+
+    <p class="signature">
+        Always your Boo. ♡
+    </p>
+
+    <div
+        style="
+        text-align:center;
+        margin-top:70px;
+        "
+    >
+
+        <p class="emphasis">
+            So ayunnn.
+            <br><br>
+            <strong>kiss booo. 🤍</strong>
+        </p>
+
+        <button
+            class="btn"
+            onclick="showFinal()"
+        >
+            one last thing →
+        </button>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     FINAL
+================================================== -->
+
+<section
+    id="final"
+    class="page"
+>
+
+<div>
+
+    <div class="final-date">
+        happy birthday, boooo
+    </div>
+
+    <div class="final-still">
+        thank you for being born
+on this little planet
+at the right time for me to find you.
+    </div>
+
+    <div class="final-birthday">
+        Ready na si Xyvienne
+    </div>
+
+</div>
+
+</section>
+
+
+<script>
+
+/* ==================================================
+   PAGE SYSTEM
+================================================== */
+
+const pages = [
+
+    "opening",
+    "memory",
+    "love",
+    "story",
+    "videoPage",
+    "why",
+    "secret",
+
+    "letter1",
+    "letter2",
+    "letter3",
+    "letter4",
+    "letter5",
+    "letter6",
+    "letter7",
+    "letter8",
+    "letter9",
+    "letter10",
+    "letter11",
+    "letter12",
+    "letter13",
+    "letter14",
+
+    "final"
+
+];
+
+let currentPage = 0;
+
+
+/* ==================================================
+   SHOW PAGE
+================================================== */
+
+function showPage(index){
+
+    if(index < 0 || index >= pages.length){
+        return;
+    }
+
+    document
+        .querySelectorAll(".page")
+        .forEach(page => {
+
+            page.classList.remove("active");
+
+        });
+
+
+    const page =
+        document.getElementById(
+            pages[index]
+        );
+
+
+    page.classList.add("active");
+
+
+    currentPage = index;
+
+
+    window.scrollTo(0,0);
+
+
+    page.scrollTop = 0;
+
+
+    /*
+       Soft music during the letter.
+    */
+
+    if(index >= 7 && index <= 20){
+
+        fadeMusicTo(
+            0.07,
+            1200
+        );
+
+    }
+
+
+    /*
+       Final page:
+       fade music almost completely.
+    */
+
+    if(index === pages.length - 1){
+
+        fadeMusicTo(
+            0,
+            2000
+        );
+
+    }
+
+}
+
+
+/* ==================================================
+   NEXT PAGE
+================================================== */
+
+function nextPage(){
+
+    showPage(
+        currentPage + 1
+    );
+
+}
+
+
+/* ==================================================
+   OPEN EXPERIENCE
+================================================== */
+
+function startExperience(){
+
+    music.volume = 0.30;
+
+    music
+        .play()
+        .then(() => {
+
+            musicPlaying = true;
+
+            musicBtn.innerHTML = "♫";
+
+        })
+        .catch(() => {
+
+            /*
+               Some browsers require
+               another interaction.
+            */
+
+        });
+
+
+    showPage(1);
+
+}
+
+
+/* ==================================================
+   MUSIC
+================================================== */
+
+const music =
+    document.getElementById(
+        "bgMusic"
+    );
+
+const musicBtn =
+    document.getElementById(
+        "musicBtn"
+    );
+
+let musicPlaying = false;
+
+
+function toggleMusic(){
+
+    if(musicPlaying){
+
+        music.pause();
+
+        musicPlaying = false;
+
+        musicBtn.innerHTML = "♪";
+
+    }else{
+
+        music.play();
+
+        musicPlaying = true;
+
+        musicBtn.innerHTML = "♫";
+
+    }
+
+}
+
+
+/* ==================================================
+   MUSIC FADE
+================================================== */
+
+function fadeMusicTo(
+    target,
+    duration
+){
+
+    if(!musicPlaying && target > 0){
+
+        return;
+
+    }
+
+
+    const start =
+        music.volume;
+
+    const difference =
+        target - start;
+
+    const startTime =
+        performance.now();
+
+
+    function animate(time){
+
+        const progress =
+            Math.min(
+                (time - startTime) /
+                duration,
+                1
+            );
+
+
+        music.volume =
+            Math.max(
+                0,
+                Math.min(
+                    1,
+                    start +
+                    difference *
+                    progress
+                )
+            );
+
+
+        if(progress < 1){
+
+            requestAnimationFrame(
+                animate
+            );
+
+        }else{
+
+            if(target === 0){
+
+                music.pause();
+
+                musicPlaying = false;
+
+                musicBtn.innerHTML = "♪";
+
+            }
+
+        }
+
+    }
+
+
+    requestAnimationFrame(
+        animate
+    );
+
+}
+
+
+/* ==================================================
+   VIDEO
+================================================== */
+
+const video =
+    document.getElementById(
+        "loveVideo"
+    );
+
+
+video.addEventListener(
+    "play",
+    () => {
+
+        if(musicPlaying){
+
+            fadeMusicTo(
+                0.03,
+                1000
+            );
+
+        }
+
+    }
+);
+
+
+video.addEventListener(
+    "pause",
+    () => {
+
+        if(
+            musicPlaying &&
+            currentPage === 4
+        ){
+
+            fadeMusicTo(
+                0.30,
+                1000
+            );
+
+        }
+
+    }
+);
+
+
+/* ==================================================
+   SECRET CODE
+================================================== */
+
+function unlockSecret(){
+
+    const input =
+        document.getElementById(
+            "codeInput"
+        );
+
+
+    const message =
+        document.getElementById(
+            "unlockMessage"
+        );
+
+
+    const code =
+        input.value.trim();
+
+
+    if(code === "0327"){
+
+        message.style.display =
+            "block";
+
+
+        /*
+           Keep him on this screen.
+           Letter is NOT accessible
+           until he presses the button.
+        */
+
+
+        fadeMusicTo(
+            0.10,
+            1000
+        );
+
+
+    }else{
+
+        alert(
+            "hmm... try again, boo 😳"
+        );
+
+        input.value = "";
+
+        input.focus();
+
+    }
+
+}
+
+
+/* ==================================================
+   OPEN LETTER
+================================================== */
+
+function openLetter(){
+
+    showPage(7);
+
+}
+
+
+/* ==================================================
+   LETTER NAVIGATION
+================================================== */
+
+function nextLetter(){
+
+    /*
+       Current letter pages:
+       7 → 8 → 9 → ... → 20
+    */
+
+    if(
+        currentPage >= 7 &&
+        currentPage < 20
+    ){
+
+        showPage(
+            currentPage + 1
+        );
+
+    }
+
+}
+
+
+/* ==================================================
+   FINAL
+================================================== */
+
+function showFinal(){
+
+    showPage(
+        pages.length - 1
+    );
+
+}
+
+
+/* ==================================================
+   ENTER KEY FOR CODE
+================================================== */
+
+document
+    .getElementById("codeInput")
+    .addEventListener(
+        "keydown",
+        function(event){
+
+            if(event.key === "Enter"){
+
+                unlockSecret();
+
+            }
+
+        }
+    );
+
+
+</script>
+
+</body>
+</html>
